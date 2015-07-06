@@ -25,4 +25,5 @@ const (
 	Subscription  = "subscription"
 	MessageId     = "message-id"
 	Message       = "message"
+	SuppressContentLength = "suppress-content-length"
 )

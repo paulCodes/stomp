@@ -458,6 +458,10 @@ func createSendFrame(destination, contentType string, body []byte, userDefined *
 	}
 
 	f.Header.Set(frame.ContentLength, strconv.Itoa(len(body)))
+
+	if b , _ := f.Contains(frame.SuppressContentLength); b == "true" {
+		f.Header.Del(frame.ContentLength)
+	}
 	return f
 }
 
